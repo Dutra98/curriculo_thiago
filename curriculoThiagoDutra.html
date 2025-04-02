@@ -10,140 +10,83 @@
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
         display: grid;
-        grid-template-columns: 300px 1fr;
+        grid-template-columns: 22% 60% 18%;
         min-height: 100vh;
       }
 
       .sidebar {
-        width: 300px;
         background-color: #1c3740;
         color: white;
-        padding: 20px;
+        padding: 30px 20px;
+        display: block;
       }
 
-      .main {
-        padding: 40px 60px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-
-      h1 {
-        font-size: 24px;
-        margin-bottom: 15px;
-      }
-
-      .selection-title {
-        font-size: 18px;
-        margin-top: 30px;
+      .highlight-box {
+        background-color: #294e58;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 16px;
         margin-bottom: 10px;
-        border-bottom: 1px solid #3c5e68;
-        padding-bottom: 5px;
+        border-radius: 5px;
       }
 
       .info {
-        font-size: 14px;
-        margin-bottom: 8px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        line-height: 1.6;
       }
 
       a {
         color: #8cd3ff;
         text-decoration: none;
-        font-size: 14px;
         transition: color 0.3s ease;
       }
 
       a:hover {
-        text-decoration: underline;
         color: #ffffff;
       }
 
-      .light {
-        color: #aaa;
+      .main {
+        padding: 30px 60px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-color: #fff;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
       }
 
       .title {
-        font-size: 32px;
+        font-size: 34px;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
       }
 
       .subtitle {
-        font-size: 16px;
-        color: #444;
+        font-size: 18px;
+        color: #333;
         margin-bottom: 4px;
       }
 
       .location {
-        color: #444;
-        font-size: 14px;
-      }
-
-      .summary-title {
-        font-size: 22px;
-        margin-top: 40px;
-        font-weight: bold;
-      }
-
-      .summary-subtitle {
-        font-size: 16px;
-        margin: 5px 0 15px;
-      }
-
-      .summary-text {
         font-size: 15px;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      .experience {
-        margin-top: 40px;
-      }
-
-      .experience h2 {
-        font-size: 22px;
-        margin-bottom: 10px;
-      }
-
-      .job-title {
-        font-weight: bold;
-        font-size: 16px;
-      }
-
-      .company {
-        font-size: 20px;
-        margin-top: 10px;
-      }
-
-      .job-period {
-        font-size: 14px;
-        color: #666;
-      }
-
-      .job-location {
-        font-size: 14px;
-        color: #aaa;
-      }
-
-      .job-description {
-        margin-top: 10px;
-        font-size: 15px;
-        line-height: 1.6;
-      }
-
-      .job-description li {
-        margin-bottom: 5px;
+        color: #555;
       }
 
       .download-btn {
-        margin-top: 30px;
+        position: absolute;
+        top: 20px;
+        right: 40px;
         background-color: #1c3740;
         color: white;
-        padding: 10px 20px;
+        padding: 8px 14px;
         border: none;
         border-radius: 6px;
-        font-size: 14px;
-        width: fit-content;
+        font-size: 12px;
         text-decoration: none;
         transition: background-color 0.3s ease;
       }
@@ -152,225 +95,305 @@
         background-color: #2c4f5a;
       }
 
-      @media (max-width: 768px) {
-        body {
-          flex-direction: column;
-        }
+      .experience h2 {
+        font-size: 24px;
+        margin-top: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-left: 5px solid #1c3740;
+        padding-left: 10px;
+        color: #1c3740;
+        text-align: center;
+      }
 
-        .sidebar {
-          width: 100%;
-          height: auto;
-        }
+      .company {
+        font-size: 19px;
+        font-weight: bold;
+        margin-top: 40px;
+        text-align: center;
+      }
 
-        .main {
-          padding: 20px;
-        }
+      .job-title {
+        font-size: 17px;
+        font-weight: bold;
+        margin-top: 5px;
+        text-align: center;
+      }
+
+      .job-period,
+      .job-location {
+        font-size: 15px;
+        color: #666;
+        text-align: center;
+      }
+
+      .job-description {
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      .job-description li {
+        margin-bottom: 6px;
+      }
+
+      .summary-sidebar {
+        background-color: #e8e8e8;
+        padding: 30px;
+        font-size: 15px;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .summary-sidebar h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #1c3740;
+        text-transform: uppercase;
+        text-align: left;
+      }
+
+      .summary-sidebar ul {
+        padding-left: 20px;
+        margin: 0;
+      }
+
+      .summary-sidebar li {
+        margin-bottom: 8px;
+        text-align: left;
+      }
+
+      .keep-together {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-top: 50px;
       }
 
       @media print {
-        body {
-          background-color: #f0f0f0 !important;
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-          margin: 0;
+        .download-btn {
+          display: none;
         }
 
-        .sidebar {
-          background-color: #1c3740 !important;
-          color: white;
-          page-break-inside: avoid;
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
         }
 
         a::after {
-          content: ""; /* Remove o link completo impresso */
+          content: "";
         }
 
         @page {
           margin: 0;
         }
+      }
 
-        /* Esconde o botão de download no PDF */
+      @media (max-width: 1024px) {
+        body {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .sidebar,
+        .main,
+        .summary-sidebar {
+          width: 100%;
+        }
+
+        .main {
+          padding: 20px;
+        }
+
         .download-btn {
-          display: none;
+          position: static;
+          margin: 10px auto;
+          display: block;
         }
       }
     </style>
   </head>
-
   <body>
     <div class="sidebar">
-      <h2 class="section-title">Contato</h2>
-      <ul>
-        <li>
-          <div class="info">
-            (11) 949123103 <span class="light">(Mobile)</span>
-          </div>
-        </li>
-        <li><div class="info">thiagoodelima@gmail.com</div></li>
-        <li>
-          <div class="info">
-            <a href="https://www.linkedin.com/in/thiago-dutra-736b7316a" target="_blank">
-                Acesse meu LinkedIn:
-            </a>
-              www.linkedin.com/in/thiago-dutra-736b7316a
-            </a>
-          </div>
-        </li>
-      </ul>
+      <div class="highlight-box">Contato</div>
+      <div class="info">(11) 949123103 <span class="light">(Mobile)</span></div>
+      <div class="info">thiagoodelima@gmail.com</div>
+      <div class="info">
+        <a
+          href="https://www.linkedin.com/in/thiago-dutra-736b7316a"
+          target="_blank"
+        >
+          Acesse meu LinkedIn:
+        </a>
+        www.linkedin.com/in/thiago-dutra-736b7316a
+      </div>
 
-      <h2 class="section-title">Principais competências</h2>
-      <ul>
-        <li><div class="info">Realização de testes</div></li>
-        <li><div class="info">Treinamento de usuários finais</div></li>
-        <li><div class="info">Montagem e Manutenção de Redes Locais</div></li>
-      </ul>
+      <div class="highlight-box">Principais competências</div>
+      <div class="info">Realização de testes</div>
+      <div class="info">Treinamento de usuários finais</div>
+      <div class="info">Montagem e Manutenção de Redes Locais</div>
 
-      <h2 class="section-title">Certificações</h2>
-      <ul>
-        <li><div class="info">Desvendando Blockchain</div></li>
-        <li><div class="info">Suporte em Sistema Colibri</div></li>
-        <li><div class="info">Tecnologia da Informação e Comunicação</div></li>
-        <li><div class="info">Suporte Técnico</div></li>
-        <li><div class="info">Manutenção De Microcomputadores</div></li>
-      </ul>
+      <div class="highlight-box">Certificações</div>
+      <div class="info">Desvendando Blockchain</div>
+      <div class="info">Suporte em Sistema Colibri</div>
+      <div class="info">Tecnologia da Informação e Comunicação</div>
+      <div class="info">Suporte Técnico</div>
+      <div class="info">Manutenção De Microcomputadores</div>
     </div>
 
     <div class="main">
-      <div class="title">Thiago Dutra</div>
-      <div class="subtitle">
-        Analista Técnico de TI | Suporte Técnico | Técnico em Informática
-      </div>
-      <div class="location">São Bernardo do Campo, São Paulo, Brasil</div>
-
       <a href="curriculo-thiago.pdf" class="download-btn" download
         >📄 Baixar Currículo em PDF</a
       >
-
-      <div class="summary-title">Resumo</div>
-      <div class="summary-subtitle">
-        Profissional com Experiência em Redes e Suporte Técnico
+      <div class="header">
+        <div class="title">Thiago Dutra</div>
+        <div class="subtitle">
+          Analista Técnico de TI | Suporte Técnico | Técnico em Informática
+        </div>
+        <div class="location">São Bernardo do Campo, São Paulo, Brasil</div>
       </div>
-      <div class="summary-text">
-        Com mais de 4 anos de experiência no setor de tecnologia, sou um
-        profissional apaixonado por redes, monitoramento e suporte técnico.
-        <br />
-        Minha jornada profissional me permitiu aprimorar minhas habilidades em
-        diversas áreas, desde o acompanhamento de SLAs até a gestão de
-        incidentes e o atendimento ao cliente.
-      </div>
-
       <div class="experience">
         <h2>Experiência</h2>
-        <div class="company">Pekus Consultoria e Desenvolvimento</div>
-        <div class="job-title">Analista de suporte de TI</div>
-        <div class="job-period">
-          fevereiro de 2024 - agosto de 2024 (7 meses)
+        <div class="keep-together">
+          <div class="company">Pekus Consultoria e Desenvolvimento</div>
+          <div class="job-title">Analista de suporte de TI</div>
+          <div class="job-period">
+            fevereiro de 2024 - agosto de 2024 (7 meses)
+          </div>
+          <div class="job-location">São Paulo, SP</div>
+          <ul class="job-description">
+            <li>
+              Prestei suporte técnico aos sistemas ePed (Pekus) e Colibri (NCR
+              Solution).
+            </li>
+            <li>
+              Atualizei a base de conhecimento e documentei processos e casos de
+              teste.
+            </li>
+            <li>Realizei abertura, análise e encerramento de chamados.</li>
+            <li>
+              Testei aplicativos, identifiquei falhas e colaborei com a equipe
+              de desenvolvimento para melhorias.
+            </li>
+            <li>
+              Monitorei o desempenho dos sistemas e diagnostiquei problemas via
+              análise de logs.
+            </li>
+            <li>
+              Conduzi treinamentos para usuários finais e mantive comunicação
+              ativa com os clientes.
+            </li>
+            <li>
+              Executei atualizações preventivas de software e coletei feedbacks
+              para aprimoramentos contínuos.
+            </li>
+          </ul>
         </div>
-        <div class="job-location">São Paulo, SP</div>
-        <ul class="job-description">
-          <li>
-            Prestei suporte técnico aos sistemas ePed (Pekus) e Colibri (NCR
-            Solution).
-          </li>
-          <li>
-            Atualizei a base de conhecimento e documentei processos e casos de
-            teste.
-          </li>
-          <li>Realizei abertura, análise e encerramento de chamados.</li>
-          <li>
-            Testei aplicativos, identifiquei falhas e colaborei com a equipe de
-            desenvolvimento para melhorias.
-          </li>
-          <li>
-            Monitorei o desempenho dos sistemas e diagnostiquei problemas via
-            análise de logs.
-          </li>
-          <li>
-            Conduzi treinamentos para usuários finais e mantive comunicação
-            ativa com os clientes.
-          </li>
-          <li>
-            Executei atualizações preventivas de software e coletei feedbacks
-            para aprimoramentos contínuos.
-          </li>
-        </ul>
 
-        <div class="company">Tecnocomp Tecnologia e Serviços</div>
-        <div class="job-title">NOC (Network Operation Center)</div>
-        <div class="job-period">
-          junho de 2023 - fevereiro de 2024 (9 meses)
+        <div class="keep-together">
+          <div class="company">Tecnocomp Tecnologia e Serviços</div>
+          <div class="job-title">NOC (Network Operation Center)</div>
+          <div class="job-period">
+            junho de 2023 - fevereiro de 2024 (9 meses)
+          </div>
+          <div class="job-location">São Bernardo do Campo, SP</div>
+          <ul class="job-description">
+            <li>
+              Monitorei redes e sistemas, garantindo alta disponibilidade e
+              desempenho.
+            </li>
+            <li>
+              Respondi a incidentes com agilidade e precisão, minimizando
+              impactos.
+            </li>
+            <li>
+              Gerenciei comunicações (e-mail, voz e vídeo) e atualizações de
+              rede.
+            </li>
+            <li>
+              Executei instalação de software/firmware, aplicação de patches e
+              backups.
+            </li>
+            <li>
+              Colaborei com a equipe de Segurança/TI na análise de ameaças.
+            </li>
+            <li>
+              Elaborei relatórios de desempenho e participei de ações de
+              otimização.
+            </li>
+            <li>
+              Realizei troubleshooting em elementos de rede e gestão de
+              firewall.
+            </li>
+          </ul>
         </div>
-        <div class="job-location">São Bernardo do Campo, SP</div>
-        <ul class="job-description">
-          <li>
-            Monitorei redes e sistemas, garantindo alta disponibilidade e
-            desempenho.
-          </li>
-          <li>
-            Respondi a incidentes com agilidade e precisão, minimizando
-            impactos.
-          </li>
-          <li>
-            Gerenciei comunicações (e-mail, voz e vídeo) e atualizações de rede.
-          </li>
-          <li>
-            Executei instalação de software/firmware, aplicação de patches e
-            backups.
-          </li>
-          <li>Colaborei com a equipe de Segurança/TI na análise de ameaças.</li>
-          <li>
-            Elaborei relatórios de desempenho e participei de ações de
-            otimização.
-          </li>
-          <li>
-            Realizei troubleshooting em elementos de rede e gestão de firewall.
-          </li>
-        </ul>
 
-        <div class="job-title">Service Desk N1</div>
-        <div class="job-period">outubro de 2022 - junho de 2023 (9 meses)</div>
-        <div class="job-location">São Bernardo do Campo, SP</div>
-        <ul class="job-description">
-          <li>
-            Prestei suporte técnico de 1º nível, acolhendo e auxiliando os
-            usuários.
-          </li>
-          <li>Realizei abertura, acompanhamento e resolução de tickets.</li>
-          <li>
-            Diagnostiquei demandas iniciais, identifiquei problemas e encaminhei
-            soluções.
-          </li>
-          <li>
-            Fui ponto de contato direto com os clientes, garantindo atendimento
-            ágil e claro.
-          </li>
-        </ul>
-
-        <div class="company">K2 Network</div>
-        <div class="job-title">Ticket Manager</div>
-        <div class="job-period">
-          março de 2019 - julho de 2021 (2 anos e 5 meses)
+        <div class="keep-together">
+          <div class="company">Service Desk N1</div>
+          <div class="job-period">
+            outubro de 2022 - junho de 2023 (9 meses)
+          </div>
+          <div class="job-location">São Bernardo do Campo, SP</div>
+          <ul class="job-description">
+            <li>
+              Prestei suporte técnico de 1º nível, acolhendo e auxiliando os
+              usuários.
+            </li>
+            <li>Realizei abertura, acompanhamento e resolução de tickets.</li>
+            <li>
+              Diagnostiquei demandas iniciais, identifiquei problemas e
+              encaminhei soluções.
+            </li>
+            <li>
+              Fui ponto de contato direto com os clientes, garantindo
+              atendimento ágil e claro.
+            </li>
+          </ul>
         </div>
-        <div class="job-location">São Bernardo do Campo, SP</div>
-        <ul class="job-description">
-          <li>
-            Monitorei diariamente as filas de incidentes da Operação, garantindo
-            cumprimento dos SLAs.
-          </li>
-          <li>
-            Atuei como facilitador entre equipes internas, intermediando
-            impedimentos e otimizando a comunicação.
-          </li>
-          <li>
-            Elaborei indicadores de desempenho e produzi status reports
-            periódicos sobre o andamento dos chamados.
-          </li>
-          <li>
-            Contribuí para a melhoria contínua dos processos de gestão de
-            tickets e atendimento.
-          </li>
-        </ul>
+
+        <div class="keep-together">
+          <div class="company">K2 Network</div>
+          <div class="job-title">Ticket Manager</div>
+          <div class="job-period">
+            março de 2019 - julho de 2021 (2 anos e 5 meses)
+          </div>
+          <div class="job-location">São Bernardo do Campo, SP</div>
+          <ul class="job-description">
+            <li>
+              Monitorei diariamente as filas de incidentes da Operação,
+              garantindo cumprimento dos SLAs.
+            </li>
+            <li>
+              Atuei como facilitador entre equipes internas, intermediando
+              impedimentos e otimizando a comunicação.
+            </li>
+            <li>
+              Elaborei indicadores de desempenho e produzi status reports
+              periódicos sobre o andamento dos chamados.
+            </li>
+            <li>
+              Contribuí para a melhoria contínua dos processos de gestão de
+              tickets e atendimento.
+            </li>
+          </ul>
+        </div>
       </div>
+    </div>
+
+    <div class="summary-sidebar">
+      <h3>Sobre mim</h3>
+      <ul>
+        <li>Mais de 4 anos de experiência no setor de tecnologia.</li>
+        <li>
+          Profissional apaixonado por redes, monitoramento e suporte técnico.
+        </li>
+        <li>Habilidades em acompanhamento de SLAs e gestão de incidentes.</li>
+        <li>
+          Experiência sólida no atendimento ao cliente e resolução de problemas.
+        </li>
+      </ul>
     </div>
   </body>
 </html>
